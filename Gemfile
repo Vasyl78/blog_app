@@ -12,6 +12,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Files uploading (ActiveStorage)
+gem 'aws-sdk-s3', '~> 1.23.1', require: false
+gem 'mini_magick', '~> 4.8'
+
 group :development, :test do
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'pry-rails', '~> 0.3.6'
