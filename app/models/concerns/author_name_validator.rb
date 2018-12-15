@@ -2,8 +2,8 @@
 
 class AuthorNameValidator < ActiveModel::Validator
   def validate(record)
-    return if /([A-Z][a-z]+\s?){2,}\./.match?(record.name)
+    return if /([A-Z][a-z]+\s?){2,}\./.match?(record.author)
 
-    record.errors.add(:density, "name should be in format 'John Taylor.'")
+    record.errors.add(:author, "Name should be in format 'John Taylor.'")
   end
 end
