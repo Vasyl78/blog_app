@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# file - max size 2 Mb (Megabit?) or it is mistake of task?
+# file - max size 2 Mb (Megabit?) or  is it mistake of task?
 class FileSizeValidator < ActiveModel::Validator
   def validate(record)
     return unless record.file.attached?
