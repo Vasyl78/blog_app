@@ -7,4 +7,5 @@ class Post < ApplicationRecord
   has_one_attached :file
 
   validates_with NameValidator
+  validates_with FileSizeValidator
 end
