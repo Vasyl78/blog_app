@@ -3,7 +3,9 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
-      resources :categories
+      resources :categories do
+        resources :posts
+      end
     end
   end
 end
