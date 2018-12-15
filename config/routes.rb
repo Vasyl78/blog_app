@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :categories do
         resources :posts
       end
+      resources :comments, only: %i[create]
     end
   end
 end
