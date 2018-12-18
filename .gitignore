@@ -22,3 +22,4 @@
 
 # Ignore databases configs
 /config/database.yml
+coverage
