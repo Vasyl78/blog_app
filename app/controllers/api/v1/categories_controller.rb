@@ -8,7 +8,7 @@ module Api
       def create
         category = Category.new(category_params)
         if category.save
-          render json: { category_id: category.id }
+          render status: :created, json: { category_id: category.id }
         else
           render status: :unprocessable_entity, json: category.errors.messages
         end
@@ -24,8 +24,6 @@ module Api
 
       def destroy
         return head :ok if category.destroy
-
-        head :error
       end
 
       private
