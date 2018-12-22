@@ -6,7 +6,6 @@ module Api
       helper_method :post, :posts, :category
 
       def create
-        binding.pry
         post = category.posts.new(post_params)
         if post.save
           render status: :created, json: { post_id: post.id }

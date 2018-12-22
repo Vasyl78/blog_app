@@ -6,7 +6,7 @@ module Api
       def create
         comment = Comment.new(comment_params)
         if comment.save
-          render json: { comment_id: comment.id }
+          render status: :created, json: { comment_id: comment.id }
         else
           render status: :unprocessable_entity, json: comment.errors.messages
         end
