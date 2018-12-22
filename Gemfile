@@ -36,7 +36,9 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner', '~> 1.7.0'
   gem 'simplecov', '~> 0.16.1', require: false
+  gem 'webmock', '~> 3.4.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
