@@ -6,9 +6,10 @@ module Api
       helper_method :post, :posts, :category
 
       def create
+        binding.pry
         post = category.posts.new(post_params)
         if post.save
-          render json: { post_id: post.id }
+          render status: :created, json: { post_id: post.id }
         else
           render status: :unprocessable_entity, json: post.errors.messages
         end
@@ -24,8 +25,6 @@ module Api
 
       def destroy
         return head :ok if post.destroy
-
-        head :error
       end
 
       private

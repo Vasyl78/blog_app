@@ -2,9 +2,6 @@
 
 require 'acceptance_helper'
 
-# require 'rails_helper'
-# require 'rspec_api_documentation/dsl'
-
 resource 'Categories' do
   header 'Content-Type', 'application/json'
   get '/api/categories' do

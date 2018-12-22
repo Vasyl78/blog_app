@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Categories API</title>
+    <title>Posts API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,12 +106,47 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Categories API</h1>
+      <h1>Posts API</h1>
 
       <div class="article">
-        <h2>All categories</h2>
-        <h3>GET /api/categories</h3>
+        <h2>Fails when missing name</h2>
+        <h3>POST /api/categories/:category_id/posts</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">post[name]</span>
+                </td>
+                <td>
+                  <span class="description">Name of post</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">post[content]</span>
+                </td>
+                <td>
+                  <span class="description">Content of post</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">post[file]</span>
+                </td>
+                <td>
+                  <span class="description">File with max size 2 MB</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
@@ -122,12 +157,14 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /api/categories</pre>
+          <pre class="request route highlight">POST /api/categories/1/posts</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">{"post":{"name":null,"content":"post content","file":null}}</pre>
 
             <h4>cURL</h4>
-            <pre class="request curl">curl -g &quot;http://localhost:3000/api/categories&quot; -X GET \
+            <pre class="request curl">curl &quot;http://localhost:3000/api/categories/1/posts&quot; -d &#39;{&quot;post&quot;:{&quot;name&quot;:null,&quot;content&quot;:&quot;post content&quot;,&quot;file&quot;:null}}&#39; -X POST \
 	-H &quot;Content-Type: application/json&quot; \
 	-H &quot;Host: example.org&quot; \
 	-H &quot;Cookie: &quot;</pre>
@@ -135,66 +172,16 @@ Cookie: </pre>
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;97ad2c13bee6fbda4660fca0c7460269&quot;
-Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 94a6fb40-3e60-40db-9ab6-aa792bfd03d9
-X-Runtime: 0.022000
-Content-Length: 657</pre>
+Cache-Control: no-cache
+X-Request-Id: 64761245-b3ce-4fdc-aace-bf488156a628
+X-Runtime: 1.636487
+Content-Length: 29</pre>
             <h4>Status</h4>
-            <pre class="response status">200 OK</pre>
+            <pre class="response status">422 Unprocessable Entity</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;categories&quot;: [
-    {
-      &quot;id&quot;: 1,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 2,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 3,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 4,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 5,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 6,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 7,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 8,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 9,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    },
-    {
-      &quot;id&quot;: 10,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
-    }
+  &quot;name&quot;: [
+    &quot;Name is required&quot;
   ]
 }</pre>
       </div>

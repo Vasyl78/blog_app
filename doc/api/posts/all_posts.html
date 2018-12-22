@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Categories API</title>
+    <title>Posts API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Categories API</h1>
+      <h1>Posts API</h1>
 
       <div class="article">
-        <h2>All categories</h2>
-        <h3>GET /api/categories</h3>
+        <h2>All posts</h2>
+        <h3>GET /api/categories/:category_id/posts</h3>
 
 
 
@@ -122,12 +122,12 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /api/categories</pre>
+          <pre class="request route highlight">GET /api/categories/1/posts</pre>
 
 
 
             <h4>cURL</h4>
-            <pre class="request curl">curl -g &quot;http://localhost:3000/api/categories&quot; -X GET \
+            <pre class="request curl">curl -g &quot;http://localhost:3000/api/categories/1/posts&quot; -X GET \
 	-H &quot;Content-Type: application/json&quot; \
 	-H &quot;Host: example.org&quot; \
 	-H &quot;Cookie: &quot;</pre>
@@ -135,65 +135,75 @@ Cookie: </pre>
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;97ad2c13bee6fbda4660fca0c7460269&quot;
+ETag: W/&quot;17c1d1aadafd0e1defaf605ddd7ad1f9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 94a6fb40-3e60-40db-9ab6-aa792bfd03d9
-X-Runtime: 0.022000
-Content-Length: 657</pre>
+X-Request-Id: 2baac628-8671-4af0-82c4-b8264df3617b
+X-Runtime: 0.040128
+Content-Length: 692</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;categories&quot;: [
+  &quot;posts&quot;: [
     {
       &quot;id&quot;: 1,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 2,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 3,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 4,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 5,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 6,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 7,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 8,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 9,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     },
     {
       &quot;id&quot;: 10,
-      &quot;name&quot;: &quot;First category.&quot;,
-      &quot;description&quot;: &quot;Category desc&quot;
+      &quot;name&quot;: &quot;First post.&quot;,
+      &quot;content&quot;: &quot;Post desc&quot;,
+      &quot;file_url&quot;: null
     }
   ]
 }</pre>
