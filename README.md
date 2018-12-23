@@ -17,9 +17,41 @@ $ rails db:setup
 $ rails s
 ```
 
+## Tests
+
+Run tests
+```sh
+$ rspec
+```
+
+Run docs generation
+```sh
+$ rake docs:generate
+```
+
+Open generated docs
+
+    ubuntu 18.04 chrome
+    ```sh
+    $ google-chrome doc/api/index.html&
+    ```
+
+    mac OS (not testing)
+    ```sh
+    $ open doc/api/index.html
+    ```
+
+
 ### Description
-Added base models: Category, Post, Comment.
-Writed custom validators.
-Used jbuilders for json responses.
-Database PostgreSQL.
-Writted factories.
+
+    Added base models: Category, Post, Comment.
+
+    Writed custom validators.
+
+    Used jbuilders for json responses.
+
+    Database PostgreSQL.
+
+    Writted factories.
+
+    Writted acceptance tests with `rspec_api_documentation` gem.
