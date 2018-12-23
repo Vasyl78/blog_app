@@ -1,4 +1,4 @@
-# Falcon Web
+# Blog APP
 
 ## Setup
 ```sh
@@ -31,12 +31,12 @@ $ rake docs:generate
 
 Open generated docs
 
-    ubuntu 18.04 chrome
+  * ubuntu 18.04 chrome
     ```sh
     $ google-chrome doc/api/index.html&
     ```
 
-    mac OS (not testing)
+  * mac OS (not testing)
     ```sh
     $ open doc/api/index.html
     ```
@@ -44,14 +44,9 @@ Open generated docs
 
 ### Description
 
-    Added base models: Category, Post, Comment.
-
-    Writed custom validators.
-
-    Used jbuilders for json responses.
-
-    Database PostgreSQL.
-
-    Writted factories.
-
-    Writted acceptance tests with `rspec_api_documentation` gem.
+  * Added base models: Category, Post, Comment.
+  * Writed custom validators.
+  * Used jbuilders for json responses.
+  * Database PostgreSQL.
+  * Writted factories.
+  * Writted acceptance tests with `rspec_api_documentation` gem.
