@@ -50,3 +50,9 @@ Open generated docs
   * Database PostgreSQL.
   * Writted factories.
   * Writted acceptance tests with `rspec_api_documentation` gem.
+
+## Not solved
+
+  * Front end app (React app)
+  * WebSockets
+  * Background jobs
